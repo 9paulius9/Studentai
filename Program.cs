@@ -1,11 +1,4 @@
-﻿using ipaantras;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System;
 
 
 namespace ipaantras
@@ -14,376 +7,72 @@ namespace ipaantras
     {
         static void Main(string[] args)
         {
-            //Masyvui
-            string switchpasirinkimas;
-            int studentukiekis = 0;
-            int ndkiekis = 0;
-            int ndivertinimas = 0;
-            double suma = 0;
-            double vidurkis = 0;
-            double arsklyginis = 0;
-            int vidurioid = 0;
-            double mediana = 0;
-            double egzaminoivertinimas = 0;
-            string[] vardasstringarray;//Masyvui
-            string[] pavardestringarray;//Masyvui
-            int[] ndkiekisintarray;//Masyvui
-            int[,] ndivertinimaiintarray;//Masyvui
-            double[] egzaminorezdoublearray;//Masyvui
-            double[] galutinisdoublearray;//Masyvui
-            double[] galutinismedianadoublearray;//Masyvui
-            Random ndivertinimasrandom = new Random();
+            Console.WriteLine("Ivesti duomenys:1, nuskaityti is failo:2?");
+           try
+           {
+                Studentai.switchpasirinkimas =  Console.ReadLine();
+                switch (Convert.ToInt32(Studentai.switchpasirinkimas))
+                {
+                    case 1:
+                        StudentoIvestis.studentoduomenys();
 
-            //Listui
-            List<string> vardasstringlist = new List<string>();//Listui
-            List<string> pavardestringlist = new List<string>();//Listui
-            List<int> ndkiekisintlist = new List<int>();//Listui
-            List<List<int>> ndivertinimailist = new List<List<int>>();
-            List<int> ndivertimaividinislistas = new List<int>();
-            List<double> egzaminorezdoublelist = new List<double>();//Listui
-            List<double> galutinisdoublelist = new List<double>();//Listui
-            List<double> galutinismedianadoublelist = new List<double>();//Listui
+                        Console.WriteLine("Skaiciuoti galutini su vidurkiu:1, skaicciuoti galutini su mediana:2");
+                        try
+                        {
+                            Studentai.switchpasirinkimas = Console.ReadLine();
+                            switch (Convert.ToInt32(Studentai.switchpasirinkimas))
+                            {
+                                case 1:
+                                    Spausdinimas.rezspausdinimasvid();
+                                    break;
 
-            //Failui skaityt
-
-            int count = 0;
-            int eilutes = 0;
-            int temp = 0;
-            string line;
-            string[] wordas;
-            int ndskaicius = 0;
-            List<string> vardaaaaaas = new List<string>();
-            List<string> vardas = new List<string>();
-            List<string> pavarde = new List<string>();
-            List<string> darbai = new List<string>();
-            List<string> egzas = new List<string>();
-            List<string> zodziai = new List<string>();
-
-            //Opens a file in read mode  
-            System.IO.StreamReader file = new System.IO.StreamReader(@"D:\\Files\\Darbai(Disk D)\\Programavimas\\ipaantras\\ipaantras\\kursiokai.txt");
-            while ((line = file.ReadLine()) != null && count <= 10000)
+                                case 2:
+                                    Spausdinimas.rezspausdinimasmed();
+                                    break;
+                                default:
+                                    throw new ArgumentOutOfRangeException("Klaidingas skaicius");
+                            }
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            Console.WriteLine("Ivedete bloga skaiciu");
+                            Console.WriteLine($"Generic Exception Handler: {e}");
+                        }
+                        catch (FormatException e)
+                        {
+                            Console.WriteLine("Ivedete neskaiciu\n");
+                            Console.WriteLine($"Generic Exception Handler: {e}");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Bloga įvestis");
+                            Console.WriteLine($"Generic Exception Handler: {e}");
+                        }
+                        break;
+                    case 2:
+                        FailoNuskaitymas.nuskaitymas();
+                        Spausdinimas.rezspausdinimasfailas();
+                        break;
+                    default :
+                        throw new ArgumentOutOfRangeException("Klaidingas skaicius") ;
+           }
+            } 
+            catch (ArgumentOutOfRangeException e)
             {
-                eilutes++;
-                zodziai = line.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
-                vardaaaaaas.Add(zodziai[count]);
-                vardas.Add(zodziai[count]);
-                pavarde.Add(zodziai[count + 1]);
-                darbai.Add(zodziai[count + 2]);
-                darbai.Add(zodziai[count + 3]);
-                darbai.Add(zodziai[count + 4]);
-                darbai.Add(zodziai[count + 5]);
-                darbai.Add(zodziai[count + 6]);
-                egzas.Add(zodziai[count + 7]);
+                Console.WriteLine("Ivedete bloga skaiciu");
+                Console.WriteLine($"Generic Exception Handler: {e}");
             }
-
-            
-            temp = 0;
-            Console.WriteLine("Ar naudoti masyva:1 ar lista:2 ar nuskaityti is failo:3?");
-            switchpasirinkimas = Console.ReadLine();
-            switch (Convert.ToInt32(switchpasirinkimas))
+            catch (FormatException e)
             {
-                case 1:
-                    //Maasyyyyyyyvass
-                    Console.WriteLine("iveskite studentu kieki");
-                    studentukiekis = Int32.Parse(Console.ReadLine());
-
-                    vardasstringarray = new string[studentukiekis];
-                    pavardestringarray = new string[studentukiekis];
-                    ndkiekisintarray = new int[studentukiekis];
-                    egzaminorezdoublearray = new double[studentukiekis];
-                    galutinisdoublearray = new double[studentukiekis];
-                    galutinismedianadoublearray = new double[studentukiekis];
-
-                    for (int i = 0; i < studentukiekis; i++)
-                    {
-                        Console.WriteLine("Iveskite  " + (i + 1) + " varda");
-                        vardasstringarray[i] = Console.ReadLine();
-
-                        Console.WriteLine("Iveskite  " + (i + 1) + " pavarde");
-                        pavardestringarray[i] = Console.ReadLine();
-
-                        Console.WriteLine("Iveskite namu darbu kieki");
-                        ndkiekis = Int32.Parse(Console.ReadLine());
-                        ndivertinimaiintarray = new int[studentukiekis, ndkiekis];
-
-                        Console.WriteLine("Ivesti patiems nd rezultatus spauskite:1, Generuoti nd rezultatus spauskite:2");
-                        switchpasirinkimas = Console.ReadLine();
-                        switch (Convert.ToInt32(switchpasirinkimas))
-                        {
-                            case 1:
-                                //Ivesti
-                                Console.WriteLine("Ivedimas");
-
-                                for (int j = 0; j < ndkiekis; j++)
-                                {
-                                    Console.WriteLine("Iveskite " + (j + 1) + " nd");
-                                    ndivertinimas = Int32.Parse(Console.ReadLine());
-                                    ndivertinimaiintarray[i, j] = ndivertinimas;
-
-                                    suma += ndivertinimas;
-                                }
-
-                                Console.WriteLine("Iveskite egzamino rezultata");
-                                egzaminoivertinimas = Double.Parse(Console.ReadLine());
-                                egzaminorezdoublearray[i] = egzaminoivertinimas;
-
-                                break;
-
-                            case 2:
-                                //Generuoti
-                                Console.WriteLine("Generavimas");
-
-                                for (int j = 0; j < ndkiekis; j++)
-                                {
-                                    //Console.WriteLine("Iveskite " + (j + 1) + "nd");
-                                    //ndivertinimas = Int32.Parse(Console.ReadLine());
-
-                                    ndivertinimas = ndivertinimasrandom.Next(1, 10);
-                                    ndivertinimaiintarray[i, j] = ndivertinimas;
-                                    suma += ndivertinimas;
-                                }
-
-                                //Console.WriteLine("Iveskite egzamino rezultata");
-                                // egzaminoivertinimas = Double.Parse(Console.ReadLine());
-
-                                egzaminoivertinimas = ndivertinimasrandom.Next(1, 10);
-                                egzaminorezdoublearray[i] = egzaminoivertinimas;
-                                break;
-                        }
-
-                        vidurkis = (suma / ndkiekis);
-                        arsklyginis = ndkiekis % 2;
-                        if (arsklyginis == 0)
-                        {
-                            //kai n elementai lyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = (ndivertinimaiintarray[i, vidurioid - 1]) + (ndivertinimaiintarray[i, vidurioid]) / 2;
-                        }
-                        else
-                        {
-                            //kai n elementai nelyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = ndivertinimaiintarray[i, vidurioid];
-                        }
-
-                        galutinisdoublearray[i] = (0.3 * vidurkis) + (0.7 * egzaminoivertinimas);
-                        galutinismedianadoublearray[i] = (0.3 * mediana) + (0.7 * egzaminoivertinimas);
-                    }
-                    Console.WriteLine("Skaiciuoti galutini su vidurkiu:1, skaicciuoti galutini su mediana:2");
-                    switchpasirinkimas = Console.ReadLine();
-                    switch (Convert.ToInt32(switchpasirinkimas))
-                    {
-                        case 1:
-                            //Vidurkis
-                            Console.WriteLine("Vidurkis");
-                            Console.WriteLine("Vardas".PadRight(10) + "Pavardė".PadRight(10) + "Galutinis (Vid.)");
-                            Console.WriteLine("------------------------------------");
-
-                            for (int i = 0; i < studentukiekis; i++)
-                            {
-                                Console.WriteLine(vardasstringarray[i].PadRight(10) + pavardestringarray[i].PadRight(10) + "".PadRight(11) + $"{galutinisdoublearray[i]:0.00}");
-                            }
-                            break;
-
-                        case 2:
-                            //Mediana
-                            Console.WriteLine("Mediana");
-                            Console.WriteLine("Vardas".PadRight(10) + "Pavardė".PadRight(10) + "Galutinis (Med.)");
-                            Console.WriteLine("------------------------------------");
-
-                            for (int i = 0; i < studentukiekis; i++)
-                            {
-                                Console.WriteLine(vardasstringarray[i].PadRight(10) + pavardestringarray[i].PadRight(10) + "".PadRight(11) + $"{galutinismedianadoublearray[i]:0.00}");
-                            }
-                            break;
-                    }
-                    break;
-
-                case 2:
-
-                    //Listaaaas
-                    Console.WriteLine("Listas");
-
-                    Console.WriteLine("iveskite studentu kieki");
-                    studentukiekis = Int32.Parse(Console.ReadLine());
-
-                    for (int i = 0; i < studentukiekis; i++)
-                    {
-                        Console.WriteLine("Iveskite " + (i + 1) + " studento varda");
-                        vardasstringlist.Add(Console.ReadLine());
-
-                        Console.WriteLine("Iveskite " + (i + 1) + " studento pavarde");
-                        pavardestringlist.Add(Console.ReadLine());
-
-                        Console.WriteLine("Iveskite namu darbu kieki");
-                        ndkiekis = Int32.Parse(Console.ReadLine());
-
-                        Console.WriteLine("Ivesti patiems nd rezultatus spauskite:1, Generuoti nd rezultatus spauskite:2");
-                        switchpasirinkimas = Console.ReadLine();
-                        switch (Convert.ToInt32(switchpasirinkimas))
-                        {
-                            case 1:
-                                //Ivesti skaicius
-                                Console.WriteLine("Ivedimas");
-
-                                for (int j = 0; j < ndkiekis; j++)
-                                {
-                                    Console.WriteLine("Iveskite " + (j + 1) + " nd");
-                                    ndivertinimas = Int32.Parse(Console.ReadLine());
-                                    ndivertimaividinislistas.Add(ndivertinimas);
-                                    ndivertinimailist.Add(ndivertimaividinislistas);
-
-                                    suma += ndivertinimailist[i][j];
-                                }
-
-                                Console.WriteLine("Iveskite egzamino rezultata");
-                                egzaminoivertinimas = Double.Parse(Console.ReadLine());
-                                egzaminorezdoublelist.Add(egzaminoivertinimas);
-
-                                break;
-
-                            case 2:
-                                //Generuoti skaicius
-                                Console.WriteLine("Generavimas");
-
-                                for (int j = 0; j < ndkiekis; j++)
-                                {
-                                    ndivertinimas = ndivertinimasrandom.Next(1, 10);
-                                    ndivertimaividinislistas.Add(ndivertinimas);
-                                    ndivertinimailist.Add(ndivertimaividinislistas);
-
-                                    suma += ndivertinimailist[i][j];
-                                }
-
-                                egzaminoivertinimas = ndivertinimasrandom.Next(1, 10);
-                                egzaminorezdoublelist.Add(egzaminoivertinimas);
-
-                                break;
-                        }
-
-                        vidurkis = (suma / ndkiekis);
-                        arsklyginis = ndkiekis % 2;
-                        if (arsklyginis == 0)
-                        {
-                            //kai n elementai lyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = (ndivertinimailist[i][vidurioid - 1]) + (ndivertinimailist[i][vidurioid]) / 2;
-                        }
-                        else
-                        {
-                            //kai n elementai nelyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = ndivertinimailist[i][vidurioid];
-                        }
-
-                        galutinisdoublelist.Add((0.3 * vidurkis) + (0.7 * egzaminoivertinimas));
-                        galutinismedianadoublelist.Add((0.3 * mediana) + (0.7 * egzaminoivertinimas));
-                    }
-
-                    Console.WriteLine("Skaiciuoti galutini su vidurkiu:1, skaicciuoti galutini su mediana:2");
-                    switchpasirinkimas = Console.ReadLine();
-                    switch (Convert.ToInt32(switchpasirinkimas))
-                    {
-                        case 1:
-                            //Vidurkis
-                            Console.WriteLine("Vidurkis");
-                            Console.WriteLine("Vardas".PadRight(10) + "Pavardė".PadRight(10) + "Galutinis (Vid.)");
-                            Console.WriteLine("------------------------------------");
-
-                            for (int i = 0; i < studentukiekis; i++)
-                            {
-                                Console.WriteLine(vardasstringlist[i].PadRight(10) + pavardestringlist[i].PadRight(10) + "".PadRight(11) + $"{galutinisdoublelist[i]:0.00}");
-                            }
-                            break;
-
-                        case 2:
-                            //Mediana
-                            Console.WriteLine("Mediana");
-                            Console.WriteLine("Vardas".PadRight(10) + "Pavardė".PadRight(10) + "Galutinis (Med.)");
-                            Console.WriteLine("------------------------------------");
-
-                            for (int i = 0; i < studentukiekis; i++)
-                            {
-                                Console.WriteLine(vardasstringlist[i].PadRight(10) + pavardestringlist[i].PadRight(10) + "".PadRight(11) + $"{galutinismedianadoublelist[i]:0.00}");
-                            }
-                            break;
-                    }
-                    break;
-                case 3:
-
-                    //Failas
-                    Console.WriteLine("Failo nuskaitymas");
-
-                    //Opens a file in read mode  
-                    // System.IO.StreamReader file = new System.IO.StreamReader(@"D:\\Files\\Darbai(Disk D)\\Programavimas\\ipaantras\\ipaantras\\kursiokai.txt");
-                    while ((line = file.ReadLine()) != null && count <= 10000)
-                    {
-                        eilutes++;
-                        zodziai = line.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
-
-                        vardaaaaaas.Add(zodziai[count]);
-                        vardas.Add(zodziai[count]);
-                        pavarde.Add(zodziai[count + 1]);
-                        darbai.Add(zodziai[count + 2]);
-                        darbai.Add(zodziai[count + 3]);
-                        darbai.Add(zodziai[count + 4]);
-                        darbai.Add(zodziai[count + 5]);
-                        darbai.Add(zodziai[count + 6]);
-                        egzas.Add(zodziai[count + 7]);
-                    }
-
-                    studentukiekis = eilutes;
-                    for (int i = 0; i < vardaaaaaas.Count(); i++)
-                    {
-
-                        vardasstringlist.Add(vardas[i]);
-                        pavardestringlist.Add(pavarde[i]);
-                        ndkiekis = (zodziai.Count() - 3);
-                        for (int j = 0 + temp; j < ndkiekis + temp; j++)
-                        {
-                            int r = 0;
-                            Int32.TryParse(darbai[j], out r);
-                            ndivertinimas = r;
-                            ndivertimaividinislistas.Add(ndivertinimas);
-                            ndivertinimailist.Add(ndivertimaividinislistas);
-
-                            suma += ndivertinimailist[i][j];
-                        }
-                        temp += ndkiekis;
-                        egzaminorezdoublelist.Add(Double.Parse(egzas[i]));
-
-                        vidurkis = (suma / ndkiekis);
-                        arsklyginis = ndkiekis % 2;
-                        if (arsklyginis == 0)
-                        {
-                            //kai n elementai lyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = (ndivertinimailist[i][vidurioid - 1]) + (ndivertinimailist[i][vidurioid]) / 2;
-                        }
-                        else
-                        {
-                            //kai n elementai nelyginis skaicius
-                            vidurioid = ndkiekis / 2;
-                            mediana = ndivertinimailist[i][vidurioid];
-                        }
-                        suma = 0;
-                        galutinisdoublelist.Add((0.3 * vidurkis) + (0.7 * egzaminorezdoublelist[i]));
-                        galutinismedianadoublelist.Add((0.3 * mediana) + (0.7 * egzaminorezdoublelist[i]));
-                    }
-
-
-                    Console.WriteLine("Vardas".PadRight(10) + "Pavardė".PadRight(10) + "Galutinis(Vid.)/".PadRight(14) + "Galutinis(Med.)");
-                    Console.WriteLine("-----------------------------------------------------------------");
-                    vardasstringlist.Sort();
-                    for (int i = 0; i < studentukiekis; i++)
-                    {
-                        Console.WriteLine(vardasstringlist[i].PadRight(9) + pavardestringlist[i].PadRight(10) + "".PadRight(11) + $"{galutinisdoublelist[i]:0.00}".PadRight(17) + $"{galutinismedianadoublelist[i]:0.00}");
-                    }
-                    break;
+                Console.WriteLine("Ivedete neskaiciu\n");
+                Console.WriteLine($"Generic Exception Handler: {e}");
             }
-
+            catch (Exception e)
+            {
+                Console.WriteLine("Bloga įvestis");
+                Console.WriteLine($"Generic Exception Handler: {e}");
+            }
             Console.ReadKey();
         }
     }
-    
 }
