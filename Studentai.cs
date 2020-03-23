@@ -37,6 +37,8 @@ namespace ipaantras
         public static List<double> egzaminorezdoublelist = new List<double>();//Listui
         public static List<double> galutinisdoublelist = new List<double>();//Listui
         public static List<double> galutinismedianadoublelist = new List<double>();//Listui
+        public static List<double> galutinisvargsiukaidoublelist = new List<double>();//Listui
+        public static List<double> galutiniskietiakaidoublelist = new List<double>();//Listui
 
         //Failui skaityt
 
@@ -46,6 +48,7 @@ namespace ipaantras
         public static string line { get; set; }
         public static string[] wordas { get; set; }
         public static int ndskaicius { get; set; }
+        public static string failovardas { get; set; }
 
         public static List<string> vardaaaaaas = new List<string>();
         public static List<string> vardas = new List<string>();
@@ -56,5 +59,5 @@ namespace ipaantras
 
     }
 
-    }
+}
 
