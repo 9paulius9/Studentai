@@ -7,10 +7,11 @@ namespace ipaantras
     {
         static void Main(string[] args)
         {
+            FailuSarasai.failugeneravimas();
             Console.WriteLine("Ivesti duomenys:1, nuskaityti is failo:2?");
-           try
-           {
-                Studentai.switchpasirinkimas =  Console.ReadLine();
+            try
+            {
+                Studentai.switchpasirinkimas = Console.ReadLine();
                 switch (Convert.ToInt32(Studentai.switchpasirinkimas))
                 {
                     case 1:
@@ -53,10 +54,10 @@ namespace ipaantras
                         FailoNuskaitymas.nuskaitymas();
                         Spausdinimas.rezspausdinimasfailas();
                         break;
-                    default :
-                        throw new ArgumentOutOfRangeException("Klaidingas skaicius") ;
-           }
-            } 
+                    default:
+                        throw new ArgumentOutOfRangeException("Klaidingas skaicius");
+                }
+            }
             catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Ivedete bloga skaiciu");

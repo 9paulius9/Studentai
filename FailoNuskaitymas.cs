@@ -10,24 +10,24 @@ namespace ipaantras
             try
             {
                 System.IO.StreamReader file = new System.IO.StreamReader(@"D:\\Files\\Darbai(Disk D)\\Programavimas\\ipaantras\\ipaantras\\kursiokai.txt");
-            
-            while ((Studentai.line = file.ReadLine()) != null && Studentai.count <= 10000)
-            {
-                Studentai.eilutes++;
-                Studentai.zodziai = Studentai.line.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
 
-                Studentai.vardaaaaaas.Add(Studentai.zodziai[Studentai.count]);
-                Studentai.vardas.Add(Studentai.zodziai[Studentai.count]);
-                Studentai.pavarde.Add(Studentai.zodziai[Studentai.count + 1]);
-                Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 2]);
-                Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 3]);
-                Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 4]);
-                Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 5]);
-                Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 6]);
-                Studentai.egzas.Add(Studentai.zodziai[Studentai.count + 7]);
-            }
+                while ((Studentai.line = file.ReadLine()) != null && Studentai.count <= 10000)
+                {
+                    Studentai.eilutes++;
+                    Studentai.zodziai = Studentai.line.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
 
-            Studentai.studentukiekis = Studentai.eilutes;
+                    Studentai.vardaaaaaas.Add(Studentai.zodziai[Studentai.count]);
+                    Studentai.vardas.Add(Studentai.zodziai[Studentai.count]);
+                    Studentai.pavarde.Add(Studentai.zodziai[Studentai.count + 1]);
+                    Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 2]);
+                    Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 3]);
+                    Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 4]);
+                    Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 5]);
+                    Studentai.darbai.Add(Studentai.zodziai[Studentai.count + 6]);
+                    Studentai.egzas.Add(Studentai.zodziai[Studentai.count + 7]);
+                }
+
+                Studentai.studentukiekis = Studentai.eilutes;
             }
             catch (Exception e)
             {
