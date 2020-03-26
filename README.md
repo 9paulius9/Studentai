@@ -1,23 +1,27 @@
 # laboras
 V0.1
+----
 Atlikta:
 Nuskaitymas:Vardas,Pavarde,nd ir egzamino rezultatas
 Isvedama: suskaiciuotas galutinis balas su vidurkiu arba mediana
 Galimybe sugeneruoti nd.
 Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)
------------------------------------------------------
+
 
 V0.2
+----
 Atlikta
 Nuskaitymas iš failo
 Paleidimas:Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e)
------------------------------------------------------
+
 
 V0.3
+----
 Atlikta:Kodo reorganizavimas(Metodu sukurimas, .cs failu nauju sukurimas ir panaudojimas)
------------------------------------------------------
+
 
 V0.4
+----
 Atlikta:
 Sugeneruojami 5 failai su 10,100,1000,10000,100000 studentu
 Rušiuojami studentai į vargšiukus ir kietiakus
@@ -26,9 +30,10 @@ Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e)
 Užkomentuot: FailoNuskaitymas.nuskaitymas();//Listas v0.2
 Užkomentuot: Spausdinimas.rezspausdinimasfailas();//Listas v0.2
 Atkomentuoti: //FailuSarasai.failuGeneravimas();v0.4
-------------------------------------------------------
+
 
 V0.5
+----
 Atlikta:Konteineriu testavimas;
 Nieko nekeitus(List):
 1.stopwatch:00:00:00.6347371 Timer:0,6370377
@@ -47,9 +52,10 @@ Arba
 Arba
 //FailoNuskaitymas.queueFailoNuskaitymas();//Queue
 //Spausdinimas.rezspausdinimasSuQueue();//Queue
--------------------------------------------------------
+
 
 V1.0
+----
 Atlikta:Konteineriu testavimas, organizavimas
 Išmatuota tris konteineriu tipai pagal strategijas:
 Saugant studentus ir atskirai saugant kietiakus ir vargšiukus:
