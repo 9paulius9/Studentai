@@ -4,8 +4,8 @@ V0.1
 Atlikta:
 Nuskaitymas:Vardas,Pavarde,nd ir egzamino rezultatas
 Isvedama: suskaiciuotas galutinis balas su vidurkiu arba mediana
-Galimybe sugeneruoti nd.
-Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)
+Galimybe sugeneruoti nd.\n
+Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)\n
 
 
 V0.2
@@ -26,10 +26,10 @@ Atlikta:
 Sugeneruojami 5 failai su 10,100,1000,10000,100000 studentu
 Rušiuojami studentai į vargšiukus ir kietiakus
 Paleidimas:
-Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e)
-Užkomentuot: FailoNuskaitymas.nuskaitymas();//Listas v0.2
+Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e);
+{Užkomentuot: FailoNuskaitymas.nuskaitymas();//Listas v0.2
 Užkomentuot: Spausdinimas.rezspausdinimasfailas();//Listas v0.2
-Atkomentuoti: //FailuSarasai.failuGeneravimas();v0.4
+Atkomentuoti: //FailuSarasai.failuGeneravimas();v0.4}
 
 
 V0.5
@@ -43,16 +43,16 @@ Naudojant Queue:
 1.stopwatch:00:00:35.6830414 Timer:35,6932467
 
 Paleidimas:Program.cs, Main;(2 pasirinkimas switch'e)
-Norint laika patikrint, reik atitinkamai atkomentuoti norimus konteinerius
-//FailoNuskaitymas.nuskaitymas();//Listas v0.2
-//Spausdinimas.rezspausdinimasfailas();//Listas v0.2
-Arba
-//FailoNuskaitymas.linkedListFailoNuskaitymas();//LinkedListas
-//Spausdinimas.rezspausdinimasSuLinkedList();//LinkedListas
-Arba
-//FailoNuskaitymas.queueFailoNuskaitymas();//Queue
-//Spausdinimas.rezspausdinimasSuQueue();//Queue
+Norint laika patikrint, reik atitinkamai atkomentuoti norimus konteinerius:
 
+//FailoNuskaitymas.nuskaitymas();//Listas v0.2;
+//Spausdinimas.rezspausdinimasfailas();//Listas v0.2;
+Arba 
+//FailoNuskaitymas.linkedListFailoNuskaitymas();//LinkedListas;
+//Spausdinimas.rezspausdinimasSuLinkedList();//LinkedListas;
+Arba 
+//FailoNuskaitymas.queueFailoNuskaitymas();//Queue;
+//Spausdinimas.rezspausdinimasSuQueue();//Queue;
 
 V1.0
 ----
@@ -83,23 +83,24 @@ Nieko nekeitus(List):
 Paleidimas:Program.cs, Main;(2 pasirinkimas switch'e)
 
 Atkomentuoti kažkuri konteinriu tipa:
-//FailuSarasai.failuGeneravimas();//Listas
-arba
-//FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList
-arba
+//FailuSarasai.failuGeneravimas();//Listas 
+arba 
+//FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList 
+arba 
 //FailuSarasai.failuGenerimvasSuQueue();//Queue
  
-ARBA
+ 
+ARBA(BeKietiaku) 
 
 //BeKietiaku(Atkomentuojant šitą pasirinkimą Be kietiaku FailuSarasai.cs faile (kiekvieno metodo apačioje atkomentuoti ir pasirinkti //kita spausdinimo metoda pvz.Spausdinimas.reziFailaBeKietiaku();
 
-//FailuSarasai.failuGeneravimas();//Listas
-arba
-//FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList
-arba
+//FailuSarasai.failuGeneravimas();//Listas 
+arba 
+//FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList 
+arba 
 //FailuSarasai.failuGenerimvasSuQueue();//Queue
 
 ARBA
 
-//SuRemove
+//SuRemove 
 //FailuSarasai.failuGeneravimas();//Listas
