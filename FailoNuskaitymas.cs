@@ -9,7 +9,7 @@ namespace ipaantras
         {
             try
             {
-                System.IO.StreamReader file = new System.IO.StreamReader(@"D:\\Files\\Darbai(Disk D)\\Programavimas\\ipaantras\\ipaantras\\SugeneruotiSarasai\\v5failas.txt");
+                System.IO.StreamReader file = new System.IO.StreamReader(@"D:\\Files\\Darbai(Disk D)\\Programavimas\\ipaantras\\ipaantras\\kursiokai.txt");
 
                 while ((Studentai.line = file.ReadLine()) != null && Studentai.count <= 10000)
                 {
@@ -207,8 +207,6 @@ namespace ipaantras
                 Studentai.galutinisdoubleQueue.Enqueue((0.3 * Studentai.vidurkis) + (0.7 * Studentai.egzaminorezdoubleQueue.ElementAt(i)));
                 Studentai.galutinismedianadoubleQueue.Enqueue((0.3 * Studentai.mediana) + (0.7 * Studentai.egzaminorezdoubleQueue.ElementAt(i)));
             }
-
-
         }
 
     }

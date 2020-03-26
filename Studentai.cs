@@ -19,13 +19,13 @@ namespace ipaantras
         public static double mediana { get; set; }
         public static double egzaminoivertinimas { get; set; }
 
-        string[] vardasstringarray;//Masyvui
-        string[] pavardestringarray;//Masyvui
-        int[] ndkiekisintarray;//Masyvui
-        int[,] ndivertinimaiintarray;//Masyvui
-        double[] egzaminorezdoublearray;//Masyvui
-        double[] galutinisdoublearray;//Masyvui
-        double[] galutinismedianadoublearray;//Masyvui
+        public static string[] vardasstringarray;//Masyvui
+        public static string[] pavardestringarray;//Masyvui
+        public static int[] ndkiekisintarray;//Masyvui
+        public static int[,] ndivertinimaiintarray;//Masyvui
+        public static double[] egzaminorezdoublearray;//Masyvui
+        public static double[] galutinisdoublearray;//Masyvui
+        public static double[] galutinismedianadoublearray;//Masyvui
 
         public static Random ndivertinimasrandom = new Random();
 
