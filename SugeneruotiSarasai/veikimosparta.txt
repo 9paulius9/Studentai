@@ -6,3 +6,7 @@ Naudojant LinkedList:
 1.stopwatch:00:00:46.2898827 Timer:46,2948626
 2.stopwatch:00:00:45.9768189 Timer:45,9820075
 3.stopwatch:00:00:45.6582918 Timer:45,6749357
+Naudojant Queue:
+1.stopwatch:00:00:35.6830414 Timer:35,6932467
+2.stopwatch:00:00:36.4558279 Timer:36,4631871
+3.stopwatch:00:00:35.2246297 Timer:35,2338331
