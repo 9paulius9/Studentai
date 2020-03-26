@@ -7,18 +7,15 @@ Isvedama: suskaiciuotas galutinis balas su vidurkiu arba mediana
 Galimybe sugeneruoti nd.\n
 Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)\n
 
-
 V0.2
 ----
 Atlikta
 Nuskaitymas iš failo
 Paleidimas:Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e)
 
-
 V0.3
 ----
 Atlikta:Kodo reorganizavimas(Metodu sukurimas, .cs failu nauju sukurimas ir panaudojimas)
-
 
 V0.4
 ----
@@ -30,7 +27,6 @@ Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e);
 {Užkomentuot: FailoNuskaitymas.nuskaitymas();//Listas v0.2
 Užkomentuot: Spausdinimas.rezspausdinimasfailas();//Listas v0.2
 Atkomentuoti: //FailuSarasai.failuGeneravimas();v0.4}
-
 
 V0.5
 ----
