@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 
 namespace ipaantras
 {
@@ -7,12 +7,16 @@ namespace ipaantras
     {
         static void Main(string[] args)
         {
-            FailuSarasai.failugeneravimas();
+            DateTime a = DateTime.Now;
+            Stopwatch stopwatch = Stopwatch.StartNew(); //creates and start the instance of Stopwatch
+            stopwatch.Start();
+            Studentai.switchfailuiskaityt = "2";
+
             Console.WriteLine("Ivesti duomenys:1, nuskaityti is failo:2?");
             try
             {
-                Studentai.switchpasirinkimas = Console.ReadLine();
-                switch (Convert.ToInt32(Studentai.switchpasirinkimas))
+                // Studentai.switchpasirinkimas = Console.ReadLine();
+                switch (Convert.ToInt32(Studentai.switchfailuiskaityt))
                 {
                     case 1:
                         StudentoIvestis.studentoduomenys();
@@ -51,8 +55,14 @@ namespace ipaantras
                         }
                         break;
                     case 2:
-                        FailoNuskaitymas.nuskaitymas();
-                        Spausdinimas.rezspausdinimasfailas();
+                        FailoNuskaitymas.nuskaitymas();//Listas
+                        Spausdinimas.rezspausdinimasfailas();//Listas
+
+                        //FailoNuskaitymas.linkedListFailoNuskaitymas();//LinkedListas
+                        //Spausdinimas.rezspausdinimasSuLinkedList();//LinkedListas
+
+                        //FailoNuskaitymas.queueFailoNuskaitymas();//Queue
+                        //Spausdinimas.rezspausdinimasSuQueue();//Queue
                         break;
                     default:
                         throw new ArgumentOutOfRangeException("Klaidingas skaicius");
@@ -73,7 +83,12 @@ namespace ipaantras
                 Console.WriteLine("Bloga įvestis");
                 Console.WriteLine($"Generic Exception Handler: {e}");
             }
-            Console.ReadKey();
+
+            stopwatch.Stop();
+            Console.WriteLine("stopwatch:" + stopwatch.Elapsed);
+            DateTime b = DateTime.Now;
+            Console.WriteLine(b.Subtract(a).TotalSeconds);
+            Console.ReadLine();
         }
     }
 }

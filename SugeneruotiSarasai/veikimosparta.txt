@@ -1,0 +1,8 @@
+Nieko nekeitus:
+1.stopwatch:00:00:00.6273590 Timer:0,6311695
+2.stopwatch:00:00:00.6399115 Timer:0,6431688
+3.stopwatch:00:00:00.6347371 Timer:0,6370377
+Naudojant LinkedList:
+1.stopwatch:00:00:46.2898827 Timer:46,2948626
+2.stopwatch:00:00:45.9768189 Timer:45,9820075
+3.stopwatch:00:00:45.6582918 Timer:45,6749357
