@@ -1,12 +1,27 @@
-Nieko nekeitus:
-1.stopwatch:00:00:00.6273590 Timer:0,6311695
-2.stopwatch:00:00:00.6399115 Timer:0,6431688
-3.stopwatch:00:00:00.6347371 Timer:0,6370377
+Nieko nekeitus(List):
+1.stopwatch:00:00:00.6347371 Timer:0,6370377
 Naudojant LinkedList:
-1.stopwatch:00:00:46.2898827 Timer:46,2948626
-2.stopwatch:00:00:45.9768189 Timer:45,9820075
-3.stopwatch:00:00:45.6582918 Timer:45,6749357
+1.stopwatch:00:00:45.9768189 Timer:45,9820075
 Naudojant Queue:
 1.stopwatch:00:00:35.6830414 Timer:35,6932467
-2.stopwatch:00:00:36.4558279 Timer:36,4631871
-3.stopwatch:00:00:35.2246297 Timer:35,2338331
+
+Rušiavimas į:Vargšiukus, Kietiakus
+Nieko nekeitus(List):
+1.stopwatch:00:00:00.8269568 Timer:0,8263706
+Naudojant LinkedList:
+1.stopwatch:00:54:38.8911224 Timer:3279,0111369
+Naudojant Queue:
+1.stopwatch:00:14:02.5729085 Timer:842,5985726
+
+Rušiavimas tik į:Vargšiukus
+Nieko nekeitus(List):
+1.stopwatch:00:00:00.6331473 Timer:0,6349657
+Naudojant LinkedList:
+1.stopwatch:00:34:12.7617182 Timer:2052,7951432
+Naudojant Queue:
+1.stopwatch:00:14:08.5381347 Timer:848,5474987
+
+Naudojant Remove
+Nieko nekeitus(List):
+1.stopwatch:00:00:00.5829708 Timer:0,5843584
+

@@ -1,12 +1,9 @@
 Vardas         Pavardė      Galutinis(Vid.)/Galutinis(Med.)
 --------------------------------------------------------
-Vardas1        Pavarde1                2,37           3,10
-Vardas2        Pavarde2                6,40           6,10
-Vardas3        Pavarde3                3,15           3,15
-Vardas4        Pavarde4                5,23           5,45
-Vardas5        Pavarde5                8,03           8,25
-Vardas6        Pavarde6                4,55           4,55
-Vardas7        Pavarde7                2,50           2,65
-Vardas8        Pavarde8                5,70           6,00
-Vardas9        Pavarde9                5,18           5,90
-Vardas10       Pavarde10               7,35           7,35
+Vardas3        Pavarde3                6,60           6,60
+Vardas5        Pavarde5                6,27           5,80
+Vardas6        Pavarde6                5,20           5,20
+Vardas7        Pavarde7                5,90           5,90
+Vardas8        Pavarde8                5,70           5,25
+Vardas9        Pavarde9                7,10           6,65
+Vardas10       Pavarde10               7,65           8,40

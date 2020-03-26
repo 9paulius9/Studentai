@@ -12,11 +12,11 @@ namespace ipaantras
             stopwatch.Start();
             Studentai.switchfailuiskaityt = "2";
 
-            Console.WriteLine("Ivesti duomenys:1, nuskaityti is failo:2?");
+            Console.WriteLine("Ivesti duomenys(listas):1, nuskaityti is failo:2, ivesti duomenys(masyvas):3");
             try
             {
-                // Studentai.switchpasirinkimas = Console.ReadLine();
-                switch (Convert.ToInt32(Studentai.switchfailuiskaityt))
+                 Studentai.switchpasirinkimas = Console.ReadLine();
+                switch (Convert.ToInt32(Studentai.switchpasirinkimas))
                 {
                     case 1:
                         StudentoIvestis.studentoduomenys();
@@ -55,14 +55,32 @@ namespace ipaantras
                         }
                         break;
                     case 2:
-                        FailoNuskaitymas.nuskaitymas();//Listas
-                        Spausdinimas.rezspausdinimasfailas();//Listas
+                        
+                        FailoNuskaitymas.nuskaitymas();//Listas v0.2
+                        Spausdinimas.rezspausdinimasfailas();//Listas v0.2
+
+                        //FailuSarasai.failuGeneravimas();v0.4
 
                         //FailoNuskaitymas.linkedListFailoNuskaitymas();//LinkedListas
                         //Spausdinimas.rezspausdinimasSuLinkedList();//LinkedListas
 
                         //FailoNuskaitymas.queueFailoNuskaitymas();//Queue
                         //Spausdinimas.rezspausdinimasSuQueue();//Queue
+
+                        //FailuSarasai.failuGeneravimas();//Listas
+                        //FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList
+                        //FailuSarasai.failuGenerimvasSuQueue();//Queue
+
+                        //BeKietiaku
+                        //FailuSarasai.failuGeneravimas();//Listas
+                        //FailuSarasai.failuGenerimvasSuLInkedList();//LinkedList
+                        //FailuSarasai.failuGenerimvasSuQueue();//Queue
+
+                        //SuRemove
+                        //FailuSarasai.failuGeneravimas();//Listas
+                        break;
+                    case 3:
+                        StudentoIvestis.masyvas();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException("Klaidingas skaicius");
