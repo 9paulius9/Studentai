@@ -5,17 +5,20 @@ Atlikta:
 Nuskaitymas:Vardas,Pavarde,nd ir egzamino rezultatas
 Isvedama: suskaiciuotas galutinis balas su vidurkiu arba mediana
 Galimybe sugeneruoti nd.\n
-Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)\n
+Paleidimas:Paleidžiama Program.cs, Main;(1 arba 3 pasirinkimas switch'e)
+![0.1 versija] (https://github.com/9paulius9/laboras/tree/74fd09c239228f86fed55e7d11c9215481ac59fc)
 
 V0.2
 ----
 Atlikta
 Nuskaitymas iš failo
-Paleidimas:Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e)
+Paleidimas:Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e
+![0.2 versija] (https://github.com/9paulius9/laboras/tree/33a9e9f5aafd4a1d6097b45cc5b169fb9f2601f9)
 
 V0.3
 ----
 Atlikta:Kodo reorganizavimas(Metodu sukurimas, .cs failu nauju sukurimas ir panaudojimas)
+![0.3 versija] (https://github.com/9paulius9/laboras/tree/ad2cc32f37490ac01d9caf00f25871b36a4afc3d)
 
 V0.4
 ----
@@ -27,6 +30,7 @@ Paleidžiama Program.cs, Main;(2 pasirinkimas switch'e);
 {Užkomentuot: FailoNuskaitymas.nuskaitymas();//Listas v0.2
 Užkomentuot: Spausdinimas.rezspausdinimasfailas();//Listas v0.2
 Atkomentuoti: //FailuSarasai.failuGeneravimas();v0.4}
+![0.4 versija] (https://github.com/9paulius9/laboras/tree/6db5eff5f210ca8e0346c65d6b30767628031afb)
 
 V0.5
 ----
@@ -49,6 +53,7 @@ Arba
 Arba 
 //FailoNuskaitymas.queueFailoNuskaitymas();//Queue;
 //Spausdinimas.rezspausdinimasSuQueue();//Queue;
+![0.5 versija] (https://github.com/9paulius9/laboras/tree/27bc0603b5c0af216d21622727a6f0dd1acd0abf)
 
 V1.0
 ----
@@ -100,3 +105,4 @@ ARBA
 
 //SuRemove 
 //FailuSarasai.failuGeneravimas();//Listas
+![1.0 versija] (https://github.com/9paulius9/laboras)
